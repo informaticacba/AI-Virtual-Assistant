@@ -6,9 +6,11 @@ import webbrowser
 import os
 
 engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-# print(voices[1].id)
-engine.setProperty('voice', voices[1].id)
+if engine:
+    voices = engine.getProperty('voices')
+    if voices:
+        # print(voices[1].id)
+        engine.setProperty('voice', voices[1].id)
 
 def speak(audio):
     engine.say(audio)
@@ -82,3 +84,10 @@ if __name__ == "__main__":
         else :
             webbrowser.open(query)
       
+def open_browser:
+    webbrowser.open(query)
+    speak(query + " is opened")
+    
+def open_code:
+     codepath = "C:\\Users\\Smartboy\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"+file
+     os.startfile(codepath)
